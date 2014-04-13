@@ -37,3 +37,16 @@
           (is (= "seventy" (convert-tens-digit 7)))
           (is (= "eighty" (convert-tens-digit 8)))
           (is (= "ninety" (convert-tens-digit 9)))))
+
+(deftest test-convert-teens
+  (testing "convert number to string representation"
+          (is (= "eleven" (convert-teens 1)))
+          (is (= "twelve" (convert-teens 2)))
+          (is (= "thirteen" (convert-teens 3)))
+          (is (= "fourteen" (convert-teens 4)))
+          (is (= "fifteen" (convert-teens 5)))
+          (is (= "sixteen" (convert-teens 6)))
+          (is (= "seventeen" (convert-teens 7)))
+          (is (= "eighteen" (convert-teens 8)))
+          (is (= "nineteen" (convert-teens 9)))
+          (is (= "ten" (convert-teens 0)))))

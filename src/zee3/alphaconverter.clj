@@ -2,6 +2,7 @@
 
 (def digits ["zero" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine"])
 (def tens [nil "ten" "twenty" "thirty" "forty" "fifthy" "sixty" "seventy" "eighty" "ninety"])
+(def teens ["ten" "eleven" "twelve" "thirteen" "fourteen" "fifteen" "sixteen" "seventeen" "eighteen" "nineteen"])
 
 (defn get-decimal
   [decimal]
@@ -22,3 +23,8 @@
   "convert the tens digit to a text representation"
   [d]
   (nth tens d))
+
+(defn convert-teens
+  "convert the teens digit to a text representation"
+  [d]
+  (nth teens d))
