@@ -28,7 +28,7 @@
           (is (= "zero" (convert-single-digit 0)))))
 
 (deftest test-convert-tens-digit
-  (testing "converting the tends digit"
+  (testing "converting the tens digit"
           (is (= "twenty" (convert-tens-digit 2)))
           (is (= "thirty" (convert-tens-digit 3)))
           (is (= "forty" (convert-tens-digit 4)))
@@ -39,14 +39,35 @@
           (is (= "ninety" (convert-tens-digit 9)))))
 
 (deftest test-convert-teens
+  (testing "converting the teens digit"
+          (is (= "one" (convert-teens 1)))
+          (is (= "two" (convert-teens 2)))
+          (is (= "three" (convert-teens 3)))
+          (is (= "four" (convert-teens 4)))
+          (is (= "five" (convert-teens 5)))
+          (is (= "six" (convert-teens 6)))
+          (is (= "seven" (convert-teens 7)))
+          (is (= "eight" (convert-teens 8)))
+          (is (= "nine" (convert-teens 9)))
+          (is (= "zero" (convert-teens 0)))
+          (is (= "eleven" (convert-teens 11)))
+          (is (= "twelve" (convert-teens 12)))
+          (is (= "thirteen" (convert-teens 13)))
+          (is (= "fourteen" (convert-teens 14)))
+          (is (= "fifteen" (convert-teens 15)))
+          (is (= "sixteen" (convert-teens 16)))
+          (is (= "seventeen" (convert-teens 17)))
+          (is (= "eighteen" (convert-teens 18)))
+          (is (= "nineteen" (convert-teens 19)))
+          (is (= "ten" (convert-teens 10)))))
+
+(deftest test-convert-number
   (testing "convert number to string representation"
-          (is (= "eleven" (convert-teens 1)))
-          (is (= "twelve" (convert-teens 2)))
-          (is (= "thirteen" (convert-teens 3)))
-          (is (= "fourteen" (convert-teens 4)))
-          (is (= "fifteen" (convert-teens 5)))
-          (is (= "sixteen" (convert-teens 6)))
-          (is (= "seventeen" (convert-teens 7)))
-          (is (= "eighteen" (convert-teens 8)))
-          (is (= "nineteen" (convert-teens 9)))
-          (is (= "ten" (convert-teens 0)))))
+    (is (= "ten and 0/100" (convert-number 10)))
+    (is (= "one and 0/100" (convert-number 1)))
+    (is (= "eighteen and 25/100" (convert-number 18.25)))))
+
+(deftest test-convert-number-part
+  (testing "convert part of number"
+    (is (= "one"  (convert-number-part 1)))
+    (is (= "eleven"  (convert-number-part 11)))))
